@@ -7,8 +7,8 @@
     "build": "tailwindcss -i ./assets/tailwind.css -o ./public/css/style.css",
     "start": "node ./server/app.js",
     "dev:express": "nodemon ./server/app.js",
-    "dev:tailwindcss": "tailwindcss -i ./assets/tailwind.css -o ./public/css/style.css --watch=always",
-    "dev": "concurrently -n server,tailwind -c green,cyan \"npm run dev:express\" \"npm run dev:tailwindcss\"",
+    "dev:tailwindcss": "tailwindcss -i ./dev/tailwind.css -o ./public/css/style.css --watch=always",
+    "dev": "concurrently -n express,tailwind -c green,cyan \"npm run dev:express\" \"npm run dev:tailwindcss\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -27,6 +27,8 @@
     "@tailwindcss/cli": "^4.1.16",
     "concurrently": "^9.2.1",
     "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4.1.16"
   },
   "nodemonConfig": {
@@ -36,5 +38,19 @@
       "./public/**"
     ],
     "delay": 2500
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "consistent",
+    "trailinGComma": "all",
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "plugins": ["prettier-plugin-tailwindcss"]
   }
 }
