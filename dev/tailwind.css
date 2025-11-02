@@ -1,1 +1,8 @@
 @import "tailwindcss" source("../public/");
+
+@theme {
+  --color-azure: #9BB4C0;
+  --color-beige-light: #E1D0B3;
+  --color-beige-dark: #A18D6D;
+  --color-brown: #703B3B;
+}

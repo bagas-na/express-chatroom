@@ -1,15 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <script type="module" src="js/script.js"></script>
-    <title>Web Messenger</title>
-  </head>
-  <body>Hello World</body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <!-- <link rel="manifest" href="/site.webmanifest" /> -->
+  <script type="module" src="js/script.js"></script>
+  <title>Web Messenger</title>
+</head>
+
+<body>
+  <div id="root" class="min-h-screen">
+    <header class="w-full bg-slate-200 py-2 px-6 flex justify-between items-center gap-4">
+      <div class="flex-1">
+        <img src="images/apple-touch-icon.png" alt="Web Messenger Logo" class="h-12 inline">
+        <h1 class="inline text-2xl font-bold ml-2 align-middle text-brown">Web Messenger</h1>
+      </div>
+      <h2 class="font-semibold text-lg">You are not Logged in</h2>
+      <button type="button" class="flex flex-col items-centers cursor-pointer">
+        <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16 17L21 12M21 12L16 7M21 12H9M12 17C12 17.93 12 18.395 11.8978 18.7765C11.6204 19.8117 10.8117 20.6204 9.77646 20.8978C9.39496 21 8.92997 21 8 21H7.5C6.10218 21 5.40326 21 4.85195 20.7716C4.11687 20.4672 3.53284 19.8831 3.22836 19.1481C3 18.5967 3 17.8978 3 16.5V7.5C3 6.10217 3 5.40326 3.22836 4.85195C3.53284 4.11687 4.11687 3.53284 4.85195 3.22836C5.40326 3 6.10218 3 7.5 3H8C8.92997 3 9.39496 3 9.77646 3.10222C10.8117 3.37962 11.6204 4.18827 11.8978 5.22354C12 5.60504 12 6.07003 12 7"
+            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="text-xs">Logout</span>
+      </button>
+    </header>
+    <main class="flex flex-col min-h-[calc(100vh-8.5rem)] w-full justify-center items-center bg-white p-1">
+      <div class="my-4 p-1 bg-slate-100 min-w-1/2 shadow-xl rounded-lg space-y-6">
+        <h1 class="mt-6 text-3xl font-bold text-beige-dark underline text-center">Messenger App</h1>
+        <div id="chat-canvas"
+          class="mx-6 p-4 max-w-2xl min-w-xs w-[80vw] min-h-120 max-h-[calc(100vh-24rem)] flex flex-col items-start bg-white rounded-xl space-y-10 overflow-y-scroll">
+          <div class="relative bg-emerald-600 px-3 py-2 rounded-2xl shadow-lg">
+            <p class="absolute font-medium text-xs -top-4 left-3">Author</p>
+            <p class="text-white font-normal text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod<br /> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation</p>
+            <p class="absolute text-xs -bottom-4 right-3">10:15</p>
+          </div>
+          <div class="relative bg-emerald-600 px-3 py-2 rounded-2xl shadow-lg">
+            <p class="absolute font-medium text-xs -top-4 left-3">Author 2</p>
+            <p class="text-white font-normal text-sm">ed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium</p>
+            <p class="absolute text-xs -bottom-4 right-3">10:15</p>
+          </div>
+          <div class="relative bg-emerald-600 px-3 py-2 rounded-2xl shadow-lg">
+            <p class="absolute font-medium text-xs -top-4 left-3">Author 3</p>
+            <p class="text-white font-normal text-sm"> Et harum quidem rerum facilis est et expedita distinctio. Nam
+              libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
+              facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
+              recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+              alias consequatur aut perferendis doloribus asperiores repellat</p>
+            <p class="absolute text-xs -bottom-4 right-3">10:15</p>
+          </div>
+          <div class="relative bg-emerald-600 px-3 py-2 rounded-2xl shadow-lg">
+            <p class="absolute font-medium text-xs -top-4 left-3">Author 5</p>
+            <p class="text-white font-normal text-sm">Message 5</p>
+            <p class="absolute text-xs -bottom-4 right-3">10:15</p>
+          </div>
+          <div class="relative bg-gray-500 px-3 py-2 rounded-2xl shadow-lg self-end">
+            <p class="absolute font-medium text-xs -top-4 right-3">Me</p>
+            <p class="text-white font-normal text-sm">On the other hand, we denounce with righteous indignation and
+              dislike men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
+            <p class="absolute text-xs -bottom-4 left-3">10:15</p>
+          </div>
+          <div class="relative bg-emerald-600 px-3 py-2 rounded-2xl shadow-lg">
+            <p class="absolute font-medium text-xs -top-4 left-3">Author</p>
+            <p class="text-white font-normal text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod<br /> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation</p>
+            <p class="absolute text-xs -bottom-4 right-3">10:15</p>
+          </div>
+          <div class="relative bg-gray-500 px-3 py-2 rounded-2xl shadow-lg self-end">
+            <p class="absolute font-medium text-xs -top-4 right-3">Me</p>
+            <p class="text-white font-normal text-sm">On the other hand, we denounce with righteous indignation and
+              dislike men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
+            <p class="absolute text-xs -bottom-4 left-3">10:15</p>
+          </div>
+          <div class="relative bg-emerald-600 px-3 py-2 rounded-2xl shadow-lg">
+            <p class="absolute font-medium text-xs -top-4 left-3">Author 3</p>
+            <p class="text-white font-normal text-sm"> Et harum quidem rerum facilis est et expedita distinctio. Nam
+              libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat
+              facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut
+              officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
+              recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+              alias consequatur aut perferendis doloribus asperiores repellat</p>
+            <p class="absolute text-xs -bottom-4 right-3">10:15</p>
+          </div>
+          <!-- Message from others -->
+          <!-- <div class="relative bg-emerald-600 px-3 py-2 rounded-2xl shadow-lg">
+            <p class="absolute font-medium text-xs -top-4 left-3">Author</p>
+            <p class="text-white font-normal text-sm">Message</p>
+            <p class="absolute text-xs -bottom-4 right-3">10:15</p>
+          </div> -->
+          <!-- Message from Myself -->
+          <!-- <div class="relative bg-gray-500 px-3 py-2 rounded-2xl shadow-lg self-end">
+            <p class="absolute font-medium text-xs -top-4 right-3">Myself</p>
+            <p class="text-white font-normal text-sm">On the other hand, we denounce with righteous indignation and
+              dislike men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
+            <p class="absolute text-xs -bottom-4 left-3">10:15</p>
+          </div> -->
+        </div>
+        <form action="" method="post" class="flex mx-6 mb-6 p-1 max-w-2xl min-w-xs w-[80vw] gap-2">
+          <input type="text" name="text" id="text-message" placeholder="Type to chat..."
+            class="flex-1 bg-white py-2 px-4 rounded-lg">
+          <button type="submit"
+            class="py-2 px-4 bg-emerald-600 text-white rounded-lg cursor-pointer hover:bg-green-600 active:bg-emerald-700 ">Submit</button>
+        </form>
+      </div>
+    </main>
+    <footer class="bg-beige-light text-center pt-2 pb-4 font-semibold">
+      <p>&copy; <span id="copyright-year">2025</span> Web Messenger.</p>
+      <p>
+        Made with &hearts; by
+        <a href="http://github.com/bagas-na/" class="text-blue-800 underline font-semibold">Bagas Nurseno Achmad</a>
+      </p>
+    </footer>
+  </div>
+</body>
+
 </html>
