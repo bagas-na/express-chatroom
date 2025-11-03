@@ -9,6 +9,7 @@
     "dev:express": "nodemon ./server/app.js",
     "dev:tailwindcss": "tailwindcss -i ./dev/tailwind.css -o ./public/css/style.css --watch=always",
     "dev": "concurrently -n express,tailwind -c green,cyan \"npm run dev:express\" \"npm run dev:tailwindcss\"",
+    "init:db": "node ./database/initdb.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
